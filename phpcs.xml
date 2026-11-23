@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ruleset name="certificateelement_enrolstart">
+    <description>PHPCS rules for certificateelement_enrolstart.</description>
+
+    <rule ref="moodle" />
+
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+</ruleset>
