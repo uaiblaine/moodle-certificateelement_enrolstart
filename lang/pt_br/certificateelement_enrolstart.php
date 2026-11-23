@@ -30,5 +30,7 @@ $string['dateformat_help'] = 'Como a data de início da inscrição é escrita n
 
 **Exemplo**: "6 de julho de 2018" imprime o dia, o mês por extenso e o ano.';
 $string['pluginname'] = 'Data de início da inscrição';
-$string['privacy:metadata'] = 'O elemento de data de início da inscrição não guarda dados próprios. A data que ele imprime fica com a emissão do certificado, em uma tabela da ferramenta de certificados, e é excluída com ela.';
+$string['privacy:metadata:issues'] = 'A tabela de certificados emitidos da ferramenta de certificados, em cujos dados o elemento de data de início da inscrição guarda uma cópia da data de início da inscrição que o certificado imprime.';
+$string['privacy:metadata:issues:data'] = 'A data em que a inscrição do participante no curso começou, como era quando o certificado foi emitido.';
+$string['privacy:metadata:issues:userid'] = 'O usuário para quem o certificado foi emitido.';
 $string['startrule'] = 'Imprime a data em que a inscrição do participante no curso começou: a data de início mais antiga entre as inscrições ativas ou, quando o método de inscrição não registra data de início, a data em que a inscrição foi criada. A data é fixada quando o certificado é emitido. Certificados emitidos fora de um curso não imprimem nada.';
