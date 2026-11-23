@@ -81,11 +81,11 @@ The plugin has no table, no setting, no capability and no user preference.
 
 It adds one value to a row the certificate tool owns: the key `certificateelement_enrolstart` in
 the JSON of `tool_certificate_issues.data`, holding the enrolment start date as a Unix time (0 when
-the learner had no active enrolment). It is kept as long as the certificate issue and is removed
-with it: a deletion request for the learner deletes the issue through the privacy provider of
-`tool_certificate`. A data request does **not** export it: that provider exports the issue's code,
-dates and custom fields, not the `data` column, so the date reaches the learner only as printed on
-the certificate file.
+the learner had no active enrolment). It is kept as long as the certificate issue. The plugin's own
+privacy provider exports it in a data request, under the certificate's code, and removes the key,
+and nothing else of the issue's data, in a deletion request; the provider of `tool_certificate`
+deletes the issue itself, and so does revoking the certificate. A user account deletion leaves the certificate issue, and the date with
+it.
 
 
 Troubleshooting

@@ -92,8 +92,14 @@ plugin of the fleet does (`~/dev/CLAUDE.md`, "XMLDB, upgrades, privacy, versioni
   judged at the issue's `timecreated`, which is the same date at that moment. A regeneration that
   loaded the row before the observer wrote and saves after it drops the key
   (`create_issue_file()` writes its in-memory `data` back).
-- **A data request does not export the date** (README, "Data stored"): `tool_certificate`'s provider
-  exports custom fields, never `issues.data`. Open, the owner's call; the fix belongs in the fork.
+- **The plugin's provider exports and removes the date** (README, "Data stored"):
+  `tool_certificate`'s provider exports custom fields, never `issues.data`, so this plugin's
+  provider reads the issues that carry the key (a LIKE filter, then a JSON decode) and exports or
+  strips only that key. A user account deletion leaves the issue with the date. The finder is the
+  LIKE alone, so it can name a user whose data only holds the plugin's name as a value: nothing is
+  exported or rewritten for them. The strip is a read-modify-write like the capture: a
+  regeneration in flight can write the key back, which a deletion request survives because
+  `tool_certificate`'s provider deletes the whole issue.
 - **An observer that throws is swallowed by core's event manager** (a `debugging()` call), so a
   failure here never stops a certificate from being issued; it only leaves the issue without a key.
   Only an `\Exception`: an `\Error` is not caught and would stop the issue.

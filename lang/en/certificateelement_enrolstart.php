@@ -30,5 +30,7 @@ $string['dateformat_help'] = 'How the enrolment start date is written on the cer
 
 **Example**: "6 July 2018" prints the day, the month in full and the year.';
 $string['pluginname'] = 'Enrolment start date';
-$string['privacy:metadata'] = 'The enrolment start date element stores no data of its own. The date it prints is kept with the certificate issue, in a table of the certificate tool, and is deleted with it.';
+$string['privacy:metadata:issues'] = 'The certificate tool\'s table of issued certificates, in whose data the enrolment start date element stores a copy of the enrolment start date the certificate prints.';
+$string['privacy:metadata:issues:data'] = 'The date the user\'s enrolment in the course started, as it was when the certificate was issued.';
+$string['privacy:metadata:issues:userid'] = 'The user the certificate was issued to.';
 $string['startrule'] = 'Prints the date the learner\'s enrolment in the course started: the earliest start date among their active enrolments, or the date the enrolment was created when the enrolment method records no start date. The date is fixed when the certificate is issued. Certificates issued outside a course print nothing.';
